@@ -14,12 +14,12 @@ function App() {
   ]);
 
   const orderOptions: Order[] = [
-    {name: "Hamburger", price: 80, style: ""},
-    {name: "Coffee", price: 70, style: ""},
-    {name: "Cheeseburger", price: 90, style: ""},
-    {name: "Tea", price: 50, style: ""},
-    {name: "Fries", price: 45, style: ""},
-    {name: "Cola", price: 40, style: ""},
+    {name: "Hamburger", price: 80, style: "styleSpoon"},
+    {name: "Coffee", price: 70, style: "styleCup"},
+    {name: "Cheeseburger", price: 90, style: "styleSpoon"},
+    {name: "Tea", price: 50, style: "styleCup"},
+    {name: "Fries", price: 45, style: "styleSpoon"},
+    {name: "Cola", price: 40, style: "styleDrink"},
   ];
 
   const addOrder = (name: string) => {
@@ -61,7 +61,7 @@ function App() {
 
     totalCost[0].sum += sum;
 
-    return sum
+    return sum;
   };
 
   return (
@@ -70,21 +70,21 @@ function App() {
         {amountOfOrders.map((item) => {
           if (item.count > 0) {
             return (
-              <div>
-                <h6>{item.name}</h6>
-                <span>x{item.count} {calculator(item)} KGS</span>
-                <button type={"button"} onClick={() => removeOrder(item.name)}></button>
+              <div className={"orderLine"}>
+                <h6 className={"orderLineHeadline"}>{item.name}</h6>
+                <span className={"orderLinePrice"}>x{item.count}  {calculator(item)} KGS</span>
+                <button type={"button"} onClick={() => removeOrder(item.name)} className={"buttonRemove"}></button>
               </div>
             )
           }
         })}
-        <h1>{totalCost.map((value) => {
-          if(value.sum > 0) {
+        <h1 className={"totalPrice"}>Total price {totalCost.map((value) => {
+          if (value.sum > 0) {
             return value.sum
           } else {
             return value.message
           }
-        })}</h1>
+        })} KGS</h1>
       </div>
 
       <div className={"addItems"}>

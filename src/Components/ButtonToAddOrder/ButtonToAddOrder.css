@@ -1,10 +1,53 @@
 .card {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
 
-  width: 150px;
+  width: 280px;
   height: 150px;
 
   border: 1px solid black;
   border-radius: 8px;
+  cursor: pointer;
+}
+.card:active {
+  border: 1px solid white;
+}
+
+.styleImage {
+  display: block;
+
+  width: 50px;
+  height: 50px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.styleSpoon {
+  background-image: url("../../assets/spoon.png");
+}
+
+.styleCup {
+  background-image: url("../../assets/cup.png");
+}
+
+.styleDrink {
+  background-image: url("../../assets/drink.png");
+}
+
+.aboutCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardHeadline {
+  margin: 0;
+  font-size: 20px;
+}
+
+.cardPrice {
+  color: gray;
 }

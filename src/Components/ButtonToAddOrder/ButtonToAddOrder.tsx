@@ -16,7 +16,7 @@ const ButtonToAddOrder: React.FC<Props> = (
   }) => {
   return (
     <div onClick={addOrder} className={`card`}>
-      <div className={`${style}`}></div>
+      <div className={`styleImage ${style}`}></div>
       <div className={`aboutCard`}>
         <h6 className={`cardHeadline`}>{name}</h6>
         <span className={`cardPrice`}>Price: ${price} KGS</span>
